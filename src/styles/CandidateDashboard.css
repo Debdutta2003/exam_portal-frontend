@@ -1,0 +1,193 @@
+.candidate-dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.candidate-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.exam-list {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CandidateDashboard.css */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-refresh {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.btn-refresh:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message button {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+.no-exams {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.no-exams p:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.exam-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Update CandidateExamCard.css */
+.exam-card.completed {
+  opacity: 0.9;
+  border-left: 4px solid #4CAF50;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-badge.pending {
+  background-color: #ff9800;
+  color: white;
+}
+
+.status-badge.ongoing {
+  background-color: #2196F3;
+  color: white;
+}
+
+.status-badge.upcoming {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.status-badge.completed {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-badge.submitted {
+  background-color: #607d8b;
+  color: white;
+}
+
+.btn-start {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: #1976D2;
+}
+
+.btn-start:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-results {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-results:hover {
+  background-color: #45a049;
+}

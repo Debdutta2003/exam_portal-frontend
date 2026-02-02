@@ -1,0 +1,43 @@
+.exam-overview {
+  padding: 2rem;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.exam-overview h1 {
+  margin-bottom: 0.5rem;
+}
+
+.exam-overview .badge {
+  margin-bottom: 1rem;
+}
+
+.exam-overview p {
+  margin: 1rem 0;
+}
+
+.exam-overview h3 {
+  margin-top: 1.5rem;
+}
+
+.exam-overview ul {
+  margin-left: 1.2rem;
+}
+
+.exam-overview li {
+  margin-bottom: 0.5rem;
+}
+
+.exam-overview button {
+  margin-top: 2rem;
+  padding: 12px 20px;
+  background-color: #243b55;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.exam-overview button:hover {
+  background-color: #141e30;
+}

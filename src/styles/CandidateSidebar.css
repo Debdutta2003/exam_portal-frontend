@@ -1,0 +1,26 @@
+.candidate-sidebar {
+  width: 220px;
+  background-color: #243b55;
+  color: white;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+.candidate-sidebar h2 {
+  margin-bottom: 2rem;
+}
+
+.candidate-sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.candidate-sidebar button:hover {
+  background-color: white;
+  color: #243b55;
+}
