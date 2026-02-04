@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CandidateSidebar from "../../components/candidate/CandidateSidebar";
 import CandidateExamCard from "../../components/candidate/CandidateExamCard";
-import { getStudentExams } from "../../api/candidateApi";
+import { getStudentExams } from "../../api/CandidateApi";
 import "../../styles/CandidateDashboard.css";
 
 function CandidateDashboard() {

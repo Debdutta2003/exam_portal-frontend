@@ -12,3 +12,7 @@ export const changePasswordFirstLogin = async (token, newPassword) => {
   );
   return res.data;
 };
+
+export const logout = () => {
+  localStorage.removeItem("token");
+};
