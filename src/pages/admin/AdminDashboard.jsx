@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
-import { logout } from "../../api/authApi";
 import { useNavigate } from "react-router-dom";
 
 import AdminSidebar from "../../components/admin/AdminSidebar";
-import CreateExamWizard from "../../components/admin/CreateExamWizard";
+import CreateExamModal from "../../components/admin/CreateExamModal";
 import InviteAdmin from "../../components/admin/InviteAdmin";
 import AdminMonitoringDashboard from "../../components/admin/AdminMonitoringDashboard";
+import ExamTable from "../../components/admin/ExamTable";
+import CreateExamWizard from "../../components/admin/CreateExamWizard";
 
 import "../../styles/AdminDashboard.css";
 
 function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("allExams");
   const [selectedExamId, setSelectedExamId] = useState(null);
+  const [showCreateExamModal, setShowCreateExamModal] = useState(false);
   const navigate = useNavigate();
-
-  const token = localStorage.getItem("token");
-
-
 
   // 🔐 JWT expiry check
   useEffect(() => {
@@ -42,11 +40,10 @@ function AdminDashboard() {
   }, [navigate]);
 
   // 🚪 Logout
- const handleLogout = () => {
-  localStorage.removeItem("token");
-  navigate("/");
-};
-
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   const handleMonitorExam = (examId) => {
     setSelectedExamId(examId);
@@ -60,7 +57,7 @@ function AdminDashboard() {
 
   return (
     <div className="admin-dashboard">
-      <AdminSidebar setActiveTab={setActiveTab} />
+      <AdminSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
 
       <div className="admin-main">
         {/* 🔝 Top Bar */}
@@ -79,18 +76,32 @@ function AdminDashboard() {
             </>
           )}
 
+
           {activeTab === "exams" && (
-            <>
-              <h1>Create New Exam</h1>
-              <CreateExamWizard />
-            </>
-          )}
+          <>
+            <h1>Create New Exam</h1>
+            <CreateExamWizard />
+          </>
+        )}
+ 
+
+          
 
           {activeTab === "allExams" && (
-            <AdminMonitoringDashboard
-              onMonitorExam={handleMonitorExam}
-              onBack={() => setActiveTab("exams")}
-            />
+            <>
+              <div className="exams-header">
+                <h1>All Exams</h1>
+                <button 
+                  className="btn-create-exam" 
+                  onClick={() => setShowCreateExamModal(true)}
+                >
+                  + Create New Exam
+                </button>
+              </div>
+              <ExamTable 
+                onMonitorExam={handleMonitorExam}
+              />
+            </>
           )}
 
           {activeTab === "monitorExam" && selectedExamId && (
@@ -108,6 +119,11 @@ function AdminDashboard() {
           )}
         </div>
       </div>
+
+      {/* Create Exam Modal */}
+      {showCreateExamModal && (
+        <CreateExamModal onClose={() => setShowCreateExamModal(false)} />
+      )}
     </div>
   );
 }
